@@ -32,7 +32,7 @@ In OBS open settings -> Audio -> Global Audio Devices -> Desktop Audio 2 and sel
 
 ![obs audio options](/imgs/obs_settings.png)
 
-Open Advanced Audio Properties.
+Open Advanced Audio Properties by clicking on the gear symbol.
 
 ![obs advanced audio properties](/imgs/obs_advanced_audio.png)
 
