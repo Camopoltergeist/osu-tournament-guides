@@ -51,7 +51,10 @@ Use the following settings for the Color Key filter:
 ![lazer color filter](/imgs/obs_color_key.png)
 
 ## Creating Window Capture Sources for the spectator client windows
-Add a new Window Capture Source. For this guide we will use the name `client 0`.
+Add a new Window Capture Source. For this guide we will use the name `client 0`.  
+Make sure the lazer window is on the top of the sources list as shown below. If it isn't, drag and drop it to the top of the list.
+
+![OBS lazer source list](/imgs/obs_lazer_source_list.png)
 
 Use the following settings:
 
@@ -131,3 +134,37 @@ Use the values for your current `TeamSize` in your spectator client's `tournamen
 	- Size:
 		- Width: `480`
 		- Height: `360`
+
+## Adding Discord Commentator Overlay
+This overlay will show the Discord name of whoever is speaking in the commentator channel. This will be achieved using the Browser source in OBS.  
+Note: the overlay will only work properly if the streamer is present in the voice channel.
+
+Get the link for the browser source [here](https://streamkit.discord.com/overlay).  
+Click the Install for OBS button and then click on the Voice Widget tab at the top.  
+
+Select your server and the commentary voice channel from the dropdown menus.
+
+![Server and voice channel selection](/imgs/streamkit_channels.png)
+
+Customize the settings to your preference. Note that the positioning inside the OBS scene are for the recommended size settings.
+
+### Recommended settings
+- Show Speaking Users Only: On
+  - This is to prevent the most likely non speaking streamer from being perpetually shown.
+  - Note: there is currently a bug with the given link if this is set on. Find `limit_speaking=true` and change it to `limit_speaking=True` (capitalize the "T" in true).
+- Small Avatars: Off
+- Text Size: `14px`
+
+Copy the resulting link located at the right side of the page, below the preview picture.
+
+![Overlay link location](/imgs/streamkit_link.png)
+
+Create a new browser source in OBS and use the following settings.  
+Replace the URL with your own.
+
+![Overlay OBS properties](/imgs/obs_overlay_properties.png)
+
+Open the transform menu and use the following settings.  
+If your tournament has rounds with higher than best of 13 (7 points to win) you should move the overlay more to the right or it will overlap with the points display.
+
+![Overlay OBS transform settings](/imgs/obs_overlay_transform.png)
